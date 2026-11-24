@@ -30,14 +30,14 @@ function contract(fn, ...types) {
 iterate({ a: 1, b: 2, c: 3 }, (key, value) => console.log({ key, value }));
 
 const read = store(5);
-console.log(read()); // 5
+console.log(read());
 
 const add = (a, b) => a + b;
 const addNumbers = contract(add, Number, Number, Number);
-console.log(addNumbers(2, 3)); // 5
+console.log(addNumbers(2, 3)); 
 
 try {
   addNumbers(2, '3');
 } catch (e) {
-  console.log(e.name, e.message); // TypeError Argument 2 must be Number
+  console.log(e.name, e.message);
 }
